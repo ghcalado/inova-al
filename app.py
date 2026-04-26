@@ -1,8 +1,11 @@
 import os
-from dotenv import load_dotenv
-from flask import Flask, request, jsonify, send_from_directory
-from flask_cors import CORS
+import uuid
+import time
+from collections import defaultdict
 
+from dotenv import load_dotenv
+from flask import Flask, request, jsonify, send_from_directory, session
+from flask_cors import CORS
 from langchain_community.document_loaders import PyPDFLoader, TextLoader, DirectoryLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import Chroma
@@ -15,27 +18,42 @@ from langchain_core.runnables import RunnablePassthrough
 load_dotenv()
 
 app = Flask(__name__, static_folder=".")
-CORS(app)
+app.secret_key = os.getenv("SECRET_KEY", os.urandom(24))
+CORS(app, supports_credentials=True)
 
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 MODEL_NAME = "llama-3.3-70b-versatile"
 DOCS_PATH = "./docs"
 CHROMA_PATH = "./chroma_db"
 
-# Histórico de conversa (memória da sessão)
-historico = []
+historicos: dict[str, list[str]] = defaultdict(list)
+
+RATE_LIMIT = 20
+RATE_WINDOW = 60         
+_rate_log: dict[str, list[float]] = defaultdict(list)
+
+
+def check_rate_limit(session_id: str) -> bool:
+    """Retorna True se a requisição for permitida, False se exceder o limite."""
+    now = time.time()
+    timestamps = _rate_log[session_id]
+    
+    _rate_log[session_id] = [t for t in timestamps if now - t < RATE_WINDOW]
+    if len(_rate_log[session_id]) >= RATE_LIMIT:
+        return False
+    _rate_log[session_id].append(now)
+    return True
+
 
 
 def inicializar_conhecimento():
     embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
 
-    # Se já existe base vetorial salva, carrega direto (sem reprocessar)
     if os.path.exists(CHROMA_PATH):
         print("Carregando base vetorial existente...")
         vectorstore = Chroma(persist_directory=CHROMA_PATH, embedding_function=embeddings)
         return vectorstore.as_retriever(search_kwargs={"k": 4})
 
-    # Primeira vez: processa os documentos e salva
     if not os.path.exists(DOCS_PATH):
         os.makedirs(DOCS_PATH)
         print(f"Pasta '{DOCS_PATH}' criada. Adicione seus arquivos lá.")
@@ -50,7 +68,6 @@ def inicializar_conhecimento():
         return None
 
     print(f"{len(docs)} páginas encontradas. Processando...")
-
     text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
     splits = text_splitter.split_documents(docs)
 
@@ -59,7 +76,6 @@ def inicializar_conhecimento():
         embedding=embeddings,
         persist_directory=CHROMA_PATH
     )
-
     print("Base vetorial criada e salva!")
     return vectorstore.as_retriever(search_kwargs={"k": 4})
 
@@ -73,21 +89,25 @@ def extrair_fontes(docs):
     for doc in docs:
         fonte = doc.metadata.get("source", "")
         if fonte:
-            nome = os.path.basename(fonte)
-            fontes.add(nome)
+            fontes.add(os.path.basename(fonte))
     return list(fontes)
 
 
-# Inicialização
+
 retriever = inicializar_conhecimento()
 llm = ChatGroq(api_key=GROQ_API_KEY, model_name=MODEL_NAME)
 
-SYSTEM_PROMPT = """Você é o Assistente Jurídico Alagoas Inovação, especialista em inovação e tecnologia.
+# PROMPT RESTRITIVO: responde apenas com base nos documentos carregados.
+# Se a informação não estiver nos documentos, informa ao usuário em vez de
+# usar conhecimento geral — importante para um contexto jurídico formal.
+SYSTEM_PROMPT = """Você é o Assistente Jurídico Alagoas Inovação, especialista em inovação e tecnologia do estado de Alagoas.
 
-Use os trechos da legislação fornecidos como sua principal fonte de informação.
-Quando a resposta estiver nos documentos, cite os artigos relevantes.
-Quando não estiver nos documentos, responda com seu conhecimento geral sobre direito e inovação, 
-deixando claro que a informação não vem da legislação local.
+Responda EXCLUSIVAMENTE com base nos trechos da legislação fornecidos no contexto abaixo.
+Quando a resposta estiver nos documentos, cite os artigos e leis relevantes.
+Se a informação solicitada NÃO estiver nos documentos, responda apenas:
+"Não encontrei essa informação na base legislativa carregada. Para questões fora dessa base, consulte um advogado especializado."
+
+Nunca invente informações jurídicas. Nunca use conhecimento externo aos documentos fornecidos.
 
 Contexto dos documentos:
 {context}
@@ -102,7 +122,11 @@ prompt = ChatPromptTemplate.from_messages([
 
 if retriever:
     rag_chain = (
-        {"context": retriever | formatar_docs, "input": RunnablePassthrough(), "historico": lambda _: "\n".join(historico[-6:])}
+        {
+            "context": retriever | formatar_docs,
+            "input": RunnablePassthrough(),
+            "historico": lambda _: "",  
+        }
         | prompt
         | llm
         | StrOutputParser()
@@ -111,43 +135,53 @@ else:
     rag_chain = None
 
 
-@app.route("/")
 def home():
     return send_from_directory(os.path.dirname(os.path.abspath(__file__)), "index.html")
 
 
 @app.route("/chat", methods=["POST"])
 def chat():
-    if not rag_chain:
+    if not retriever:
         return jsonify({"error": "Base de conhecimento não carregada. Verifique se há arquivos em ./docs"}), 500
+
+    if "session_id" not in session:
+        session["session_id"] = str(uuid.uuid4())
+    session_id = session["session_id"]
+
+
+    if not check_rate_limit(session_id):
+        return jsonify({"error": f"Limite de {RATE_LIMIT} mensagens por minuto atingido. Aguarde um momento."}), 429
 
     data = request.get_json()
     user_input = data.get("message", "").strip()
-
     if not user_input:
         return jsonify({"error": "Mensagem vazia"}), 400
 
+    historico = historicos[session_id]
+
     try:
-        # Busca os documentos relevantes para pegar as fontes
         docs_relevantes = retriever.invoke(user_input)
         fontes = extrair_fontes(docs_relevantes)
+        contexto = formatar_docs(docs_relevantes)
+        historico_str = "\n".join(historico[-6:])
 
-        # Gera a resposta
-        resposta = rag_chain.invoke(user_input)
+        resposta = (
+            prompt
+            | llm
+            | StrOutputParser()
+        ).invoke({
+            "context": contexto,
+            "input": user_input,
+            "historico": historico_str,
+        })
 
-        # Salva no histórico
         historico.append(f"Usuário: {user_input}")
         historico.append(f"Assistente: {resposta}")
-
-        # Mantém só as últimas 10 mensagens no histórico
+    
         if len(historico) > 10:
-            historico.pop(0)
-            historico.pop(0)
+            historicos[session_id] = historico[-10:]
 
-        return jsonify({
-            "response": resposta,
-            "fontes": fontes
-        })
+        return jsonify({"response": resposta, "fontes": fontes})
 
     except Exception as e:
         print(f"Erro: {e}")
@@ -156,9 +190,12 @@ def chat():
 
 @app.route("/limpar", methods=["POST"])
 def limpar_historico():
-    historico.clear()
+    session_id = session.get("session_id")
+    if session_id:
+        historicos.pop(session_id, None)
     return jsonify({"ok": True})
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8001, debug=True)
+   
+    app.run(host="0.0.0.0", port=8001, debug=False)
