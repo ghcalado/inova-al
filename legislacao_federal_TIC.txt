@@ -1,0 +1,394 @@
+================================================================
+LEGISLAÇÃO FEDERAL DE TIC E INOVAÇÃO — BASE DE CONHECIMENTO RAG
+Chatbot: Direito Digital e Inovação em Alagoas
+================================================================
+
+INSTRUÇÕES PARA O CHATBOT
+--------------------------
+Este documento contém os principais marcos legais federais que regem
+tecnologia da informação, proteção de dados, inovação, startups e
+governo digital no Brasil. Sempre que uma pergunta envolver mais de
+um tema, combine as normas adequadas em vez de escolher apenas uma.
+
+
+================================================================
+1. LGPD — LEI GERAL DE PROTEÇÃO DE DADOS PESSOAIS
+   Lei nº 13.709, de 14 de agosto de 2018
+   (com alterações da Lei nº 13.853/2019)
+================================================================
+
+QUANDO USAR: qualquer pergunta sobre coleta de dados, formulários,
+banco de dados, consentimento, compartilhamento de informações,
+segurança da informação, vazamento de dados, IA com dados pessoais
+e tratamento por órgãos públicos.
+
+Art. 1º Esta Lei dispõe sobre o tratamento de dados pessoais,
+inclusive nos meios digitais, por pessoa natural ou por pessoa
+jurídica de direito público ou privado, com o objetivo de proteger
+os direitos fundamentais de liberdade e de privacidade e o livre
+desenvolvimento da personalidade da pessoa natural.
+
+Parágrafo único. As normas gerais contidas nesta Lei são de
+interesse nacional e devem ser observadas pela União, Estados,
+Distrito Federal e Municípios.
+
+Art. 2º A disciplina da proteção de dados pessoais tem como
+fundamentos: I - o respeito à privacidade; II - a
+autodeterminação informativa; III - a liberdade de expressão,
+de informação, de comunicação e de opinião; IV - a inviolabilidade
+da intimidade, da honra e da imagem; V - o desenvolvimento
+econômico e tecnológico e a inovação; VI - a livre iniciativa,
+a livre concorrência e a defesa do consumidor; VII - os direitos
+humanos, o livre desenvolvimento da personalidade, a dignidade e
+o exercício da cidadania pelas pessoas naturais.
+
+Art. 3º Esta Lei aplica-se a qualquer operação de tratamento
+realizada por pessoa natural ou por pessoa jurídica de direito
+público ou privado, independentemente do meio, do país de sua
+sede ou do país onde estejam localizados os dados, desde que:
+I - a operação de tratamento seja realizada no território nacional;
+II - a atividade de tratamento tenha por objetivo a oferta ou o
+fornecimento de bens ou serviços ou o tratamento de dados de
+indivíduos localizados no território nacional; ou
+III - os dados pessoais objeto do tratamento tenham sido coletados
+no território nacional.
+
+Art. 4º Esta Lei não se aplica ao tratamento de dados pessoais:
+I - realizado por pessoa natural para fins exclusivamente
+particulares e não econômicos;
+III - realizado para fins exclusivos de: a) segurança pública;
+b) defesa nacional; c) segurança do Estado; d) atividades de
+investigação e repressão de infrações penais.
+
+BASES LEGAIS PARA TRATAMENTO (Art. 7º):
+O tratamento de dados pessoais somente poderá ser realizado nas
+seguintes hipóteses:
+I - mediante o fornecimento de consentimento pelo titular;
+II - para o cumprimento de obrigação legal ou regulatória pelo
+controlador;
+III - pela administração pública, para o tratamento e uso
+compartilhado de dados necessários à execução de políticas
+públicas previstas em leis e regulamentos;
+IV - para a realização de estudos por órgão de pesquisa,
+garantida, sempre que possível, a anonimização dos dados pessoais;
+V - quando necessário para a execução de contrato do qual seja
+parte o titular;
+VI - para o exercício regular de direitos em processo judicial,
+administrativo ou arbitral;
+VII - para a proteção da vida ou da incolumidade física do titular
+ou de terceiro;
+IX - quando necessário para atender aos interesses legítimos do
+controlador ou de terceiro.
+
+PRINCÍPIOS (Art. 6º): finalidade, adequação, necessidade,
+livre acesso, qualidade dos dados, transparência, segurança,
+prevenção, não discriminação, responsabilização e prestação de
+contas.
+
+AUTORIDADE NACIONAL (Art. 55-A): A Autoridade Nacional de
+Proteção de Dados (ANPD) é a entidade da administração pública
+responsável por zelar, implementar e fiscalizar o cumprimento
+desta Lei em todo o território nacional.
+
+SANÇÕES (Art. 52): O controlador ou o operador que realizar
+tratamento de dados pessoais de forma irregular fica sujeito às
+seguintes sanções: I - advertência; II - multa simples de até 2%
+do faturamento, limitada a R$ 50 milhões por infração;
+III - multa diária; IV - publicização da infração;
+V - bloqueio dos dados pessoais; VI - eliminação dos dados
+pessoais.
+
+
+================================================================
+2. MARCO CIVIL DA INTERNET
+   Lei nº 12.965, de 23 de abril de 2014
+================================================================
+
+QUANDO USAR: perguntas sobre provedores, logs de acesso,
+plataformas digitais, neutralidade de rede, responsabilidade
+por conteúdo online, guarda de registros, uso da internet
+pelo poder público.
+
+Art. 1º Esta Lei estabelece princípios, garantias, direitos e
+deveres para o uso da Internet no Brasil e determina as diretrizes
+para atuação da União, dos Estados, do Distrito Federal e dos
+Municípios em relação à matéria.
+
+Art. 2º A disciplina do uso da Internet no Brasil tem como
+fundamento o respeito à liberdade de expressão, bem como:
+I - o reconhecimento da escala mundial da rede;
+II - os direitos humanos, o desenvolvimento da personalidade e
+o exercício da cidadania em meios digitais;
+III - a pluralidade e a diversidade;
+IV - a abertura e a colaboração;
+V - a livre iniciativa, a livre concorrência e a defesa do
+consumidor; e
+VI - a finalidade social da rede.
+
+GARANTIAS AO USUÁRIO (Art. 7º):
+I - inviolabilidade da intimidade e da vida privada;
+II - inviolabilidade e sigilo do fluxo de suas comunicações
+pela internet;
+III - inviolabilidade e sigilo de suas comunicações privadas
+armazenadas, salvo por ordem judicial;
+VII - não fornecimento a terceiros de seus dados pessoais,
+inclusive registros de conexão e de acesso a aplicações de
+internet, salvo mediante consentimento livre e expresso ou nas
+hipóteses previstas em lei;
+VIII - informações claras e completas sobre coleta, uso,
+armazenamento, tratamento e proteção de seus dados pessoais.
+
+NEUTRALIDADE DE REDE (Art. 9º): O responsável pela transmissão,
+comutação ou roteamento tem o dever de tratar de forma isonômica
+quaisquer pacotes de dados, sem distinção por conteúdo, origem e
+destino, serviço, terminal ou aplicação.
+
+GUARDA DE REGISTROS DE CONEXÃO (Art. 13º):
+Na provisão de conexão à internet, cabe ao administrador de
+sistema autônomo respectivo o dever de manter os registros de
+conexão, sob sigilo, em ambiente controlado e de segurança,
+pelo prazo de 1 (um) ano.
+
+GUARDA DE REGISTROS DE ACESSO A APLICAÇÕES (Art. 15º):
+O provedor de aplicações de internet constituído na forma de
+pessoa jurídica e que exerça essa atividade de forma organizada,
+profissionalmente e com fins econômicos deverá manter os
+respectivos registros de acesso a aplicações de internet, sob
+sigilo, em ambiente controlado e de segurança, pelo prazo de 6
+(seis) meses.
+
+RESPONSABILIDADE POR DANOS (Art. 18º e 19º):
+O provedor de conexão à internet não será responsabilizado
+civilmente por danos decorrentes de conteúdo gerado por terceiros.
+O provedor de aplicações de internet somente poderá ser
+responsabilizado civilmente por danos decorrentes de conteúdo
+gerado por terceiros se, após ordem judicial específica, não
+tomar as providências para tornar indisponível o conteúdo.
+
+USO PELO PODER PÚBLICO (Art. 24º a 26º):
+São diretrizes para atuação da União, Estados e Municípios:
+I - estabelecimento de mecanismos de governança multiparticipativa;
+II - promoção da racionalização da gestão, expansão e uso da
+internet no Brasil;
+III - promoção da interoperabilidade entre sistemas e terminais.
+
+
+================================================================
+3. LC 182/2021 — MARCO LEGAL DAS STARTUPS
+   Lei Complementar nº 182, de 1º de junho de 2021
+================================================================
+
+QUANDO USAR: perguntas sobre startups, inovação aberta, sandboxes
+regulatórios, empreendedorismo inovador, contratação de startups
+pelo poder público, ambientes experimentais.
+
+Art. 2º Para fins desta Lei Complementar, consideram-se:
+I - startup: organizações empresariais ou societárias,
+nascentes ou em operação recente, que se caracterizam pela
+inovação aplicada a modelo de negócio ou a produtos e serviços
+ofertados;
+II - investidor-anjo: pessoa natural ou jurídica que investe
+em startup em troca de participação nos lucros ou resultados
+ou, ainda, em remuneração pelo capital empregado.
+
+AMBIENTE REGULATÓRIO EXPERIMENTAL — SANDBOX (Art. 3º):
+Órgãos e entidades da administração pública federal, estadual,
+distrital e municipal poderão criar ambientes regulatórios
+experimentais com o objetivo de:
+I - estimular o desenvolvimento de projetos inovadores;
+II - facilitar o desenvolvimento e o aperfeiçoamento de normas;
+III - permitir o monitoramento e a avaliação de modelos de
+negócios inovadores.
+
+CONTRATAÇÃO DE STARTUPS PELO PODER PÚBLICO (Art. 14º a 26º):
+A administração pública poderá contratar startups para a
+realização de projetos de inovação e de pesquisa científica e
+tecnológica. O processo seletivo de startups pode ser simplificado
+quando comparado aos processos tradicionais de licitação.
+
+DESAFIO PÚBLICO DE INOVAÇÃO (Art. 14º):
+A administração pública poderá propor desafios de inovação ao
+setor privado para solução de problemas ou atendimento a demandas
+de interesse público por meio de soluções inovadoras.
+
+CONTRATAÇÃO DIRETA DE STARTUP (Art. 20º):
+A administração pública poderá dispensar a licitação para
+contratar startup para:
+I - execução de projeto de pesquisa, de desenvolvimento e de
+inovação;
+II - fornecimento de tecnologia nova para atendimento de demandas
+de interesse público específicas.
+
+TETO DE VALOR: Dispensas de licitação para contratação de
+startups têm limite de 20 (vinte) salários mínimos por contrato.
+
+PRAZO MÁXIMO: 12 (doze) meses, prorrogável por igual período.
+
+
+================================================================
+4. LEI 14.133/2021 — NOVA LEI DE LICITAÇÕES
+   Lei nº 14.133, de 1º de abril de 2021
+================================================================
+
+QUANDO USAR: perguntas sobre compra pública de software,
+desenvolvimento de sistemas, serviços de nuvem, suporte técnico,
+outsourcing de TI, licenças, consultoria tecnológica, contratos
+de TI com o poder público.
+
+Art. 1º Esta Lei estabelece normas gerais de licitação e
+contratação para as Administrações Públicas diretas, autárquicas
+e fundacionais da União, dos Estados, do Distrito Federal e dos
+Municípios.
+
+PRINCÍPIOS (Art. 5º): legalidade, impessoalidade, moralidade,
+publicidade, eficiência, interesse público, probidade
+administrativa, igualdade, planejamento, transparência,
+eficácia, segregação de funções, motivação, vinculação ao edital,
+julgamento objetivo, segurança jurídica, razoabilidade,
+competitividade, proporcionalidade, celeridade, economicidade
+e duração razoável do processo.
+
+MODALIDADES DE LICITAÇÃO (Art. 28º):
+I - pregão; II - concorrência; III - concurso;
+IV - leilão; V - diálogo competitivo.
+
+DIÁLOGO COMPETITIVO (Art. 32º):
+Modalidade aplicável quando a administração pública pretende
+contratar objeto que envolva inovação tecnológica ou técnica.
+A administração realiza diálogos com licitantes previamente
+selecionados com o objetivo de desenvolver alternativas capazes
+de atender às suas necessidades.
+
+CONTRATAÇÃO DE SOLUÇÕES DE TI:
+A lei reconhece a complexidade de contratações de TI, exigindo:
+- definição adequada do objeto com especificações técnicas claras;
+- análise de riscos;
+- critérios de aceitação e métricas de desempenho;
+- cuidado com dependência tecnológica (lock-in);
+- gestão de contratos com indicadores de resultado.
+
+DISPENSA E INEXIGIBILIDADE:
+Art. 74º - É inexigível a licitação quando houver
+inviabilidade de competição, em especial quando houver
+fornecedor exclusivo de determinado bem ou serviço.
+
+Art. 75º - É dispensável a licitação para contratações cujo
+valor seja inferior a: I - R$ 50.000,00 para obras e serviços
+de engenharia; II - R$ 50.000,00 para outros serviços e compras.
+
+CONTRATOS (Art. 92º a 154º):
+Os contratos devem conter cláusulas sobre objeto, prazo,
+valor, critérios de reajuste, penalidades, rescisão e
+garantias. Para TI, é recomendável incluir: SLA (Service Level
+Agreement), indicadores de desempenho, plano de continuidade
+e cláusula de propriedade intelectual.
+
+
+================================================================
+5. LEI 14.129/2021 — GOVERNO DIGITAL
+   Lei nº 14.129, de 29 de março de 2021
+================================================================
+
+QUANDO USAR: perguntas sobre transformação digital no setor público,
+serviços digitais do governo, interoperabilidade de sistemas,
+dados abertos, desburocratização digital.
+
+Art. 1º Esta Lei dispõe sobre princípios, regras e instrumentos
+para o aumento da eficiência da administração pública,
+especialmente por meio da desburocratização, da inovação, da
+transformação digital e da participação do cidadão.
+
+PRINCÍPIOS (Art. 3º):
+X - a simplificação dos procedimentos de solicitação, oferta e
+acompanhamento dos serviços públicos, com foco na universalização
+do acesso e no autoserviço;
+XIV - a interoperabilidade de sistemas e a promoção de dados
+abertos;
+XVII - a proteção de dados pessoais, nos termos da LGPD.
+
+SERVIÇOS PÚBLICOS DIGITAIS (Art. 4º a 11º):
+Os órgãos e entidades públicos devem disponibilizar seus serviços
+preferencialmente por meio digital, garantindo:
+- acessibilidade para todos os cidadãos;
+- autenticação por meio de plataforma única (gov.br);
+- assinatura eletrônica;
+- protocolo eletrônico de documentos.
+
+INTEROPERABILIDADE (Art. 16º a 18º):
+Os sistemas de informação dos órgãos públicos devem ser
+interoperáveis entre si, permitindo o compartilhamento de
+dados para evitar exigência de documentos já disponíveis
+no governo.
+
+DADOS ABERTOS (Art. 20º a 22º):
+Os órgãos e entidades da administração pública devem disponibilizar
+seus dados em formato aberto, nos termos do disposto na Lei de
+Acesso à Informação.
+
+
+================================================================
+6. COMO COMBINAR AS NORMAS — GUIA PRÁTICO
+================================================================
+
+CASO 1 — Startup contratada pelo governo para criar plataforma
+com dados pessoais:
+→ LC 182 (regime de inovação e contratação de startup)
+→ Lei 14.133 (contratação pública)
+→ LGPD (tratamento de dados pessoais)
+→ Marco Civil (se operar via internet)
+
+CASO 2 — Governo quer comprar software de IA:
+→ Lei 14.133 (licitação/contratação)
+→ LGPD (se processar dados pessoais)
+→ Lei 14.129 (governo digital e interoperabilidade)
+
+CASO 3 — Startup quer testar solução experimental com órgão público:
+→ LC 182 (sandbox regulatório)
+→ Lei 14.133 (se virar contrato)
+→ LGPD (se houver dados pessoais)
+
+CASO 4 — Provedor de internet deve guardar logs de acesso:
+→ Marco Civil (prazos e requisitos de guarda)
+→ LGPD (segurança e proteção dos dados guardados)
+
+CASO 5 — Cidadão quer saber como o governo usa seus dados:
+→ LGPD (direitos do titular)
+→ Lei 14.129 (transparência dos serviços digitais)
+→ Lei de Acesso à Informação (LAI — Lei 12.527/2011)
+
+
+================================================================
+7. ESTRUTURA IDEAL DE RESPOSTA DO CHATBOT
+================================================================
+
+Toda resposta deve ter três camadas:
+
+1. CAMADA NORMATIVA: qual lei ou conjunto de leis se aplica.
+2. CAMADA INTERPRETATIVA: por que essas normas se aplicam ao caso.
+3. CAMADA PRÁTICA: o que isso significa na prática.
+
+Exemplo de boa resposta:
+Pergunta: "O governo pode contratar uma startup de IA?"
+Resposta: Sim. A LC 182/2021 permite a contratação simplificada
+de startups pelo poder público para projetos de inovação, com
+dispensa de licitação para contratos de até 20 salários mínimos.
+A contratação deve obedecer à Lei 14.133/2021 para os demais
+requisitos formais. Se a solução tratar dados pessoais, a LGPD
+também incide, exigindo base legal, finalidade definida e
+medidas de segurança adequadas.
+
+
+================================================================
+FONTES OFICIAIS
+================================================================
+
+- LGPD: planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/L13709compilado.htm
+- Marco Civil: planalto.gov.br/ccivil_03/_ato2011-2014/2014/lei/l12965.htm
+- LC 182/2021: planalto.gov.br/ccivil_03/leis/lcp/Lcp182.htm
+- Lei 14.133/2021: planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/L14133.htm
+- Lei 14.129/2021: planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14129.htm
+- ANPD: gov.br/anpd
+
+================================================================
+FIM DO DOCUMENTO
+================================================================
