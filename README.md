@@ -1,4 +1,4 @@
-<img width="800" height="455" alt="ezgif com-video-to-gif-converter" src="https://github.com/user-attachments/assets/8559955c-11fb-476b-9951-9a9400528e51" />
+<img width="800" height="455" alt="GravacaodeTela2026-04-26as16 43 33-ezgif com-video-to-gif-converter" src="https://github.com/user-attachments/assets/b58ad917-aec9-4504-8ecd-aae29d7ff2df" />
 
 
 
