@@ -1,25 +1,13 @@
-# Ambiente virtual
+
 venv/
 .venv/
 env/
-
-# Variáveis de ambiente — NUNCA commitar a chave de API
 .env
-
-# Base vetorial gerada localmente (pesada e recriada automaticamente)
 chroma_db/
-
-# Cache Python
 __pycache__/
 *.py[cod]
 *.pyo
-
-# macOS
 .DS_Store
-
-# IDEs
 .vscode/
 .idea/
-
-# Logs
 *.log
